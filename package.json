@@ -1,0 +1,23 @@
+{
+  "name": "coop-controller",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tarasglek/coop-controller.git"
+  },
+  "author": "Taras Glek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tarasglek/coop-controller/issues"
+  },
+  "homepage": "https://github.com/tarasglek/coop-controller#readme",
+  "dependencies": {
+    "pi-gpio": "0.0.8",
+    "suncalc": "^1.7.0"
+  }
+}
