@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/tarasglek/coop-controller#readme",
   "dependencies": {
+    "bluebird": "^3.3.5",
     "pi-gpio": "0.0.8",
     "suncalc": "^1.7.0"
   }
