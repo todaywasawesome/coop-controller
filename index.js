@@ -56,4 +56,5 @@ function loop() {
     then(loop)
 }
 
+console.error("starting coop controller");
 loop();     
