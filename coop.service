@@ -1,0 +1,12 @@
+[Unit]
+Description=coop
+After=syslog.target
+
+[Service]
+Type=forking
+User=pi
+ExecStart=/usr/local/bin/node /home/pi/coop-controller/index.js
+Restart=always
+
+[Install]
+WantedBy=default.target
