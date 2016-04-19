@@ -3,7 +3,7 @@ Description=coop
 After=syslog.target
 
 [Service]
-Type=forking
+Type=simple
 User=pi
 ExecStart=/usr/local/bin/node /home/pi/coop-controller/index.js
 Restart=always
