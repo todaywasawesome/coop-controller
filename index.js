@@ -111,11 +111,7 @@ function server() {
       <title>coop: ${stateString}</title>
       <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/> 
       <style>
-      body {
-    font-family: Arial, Helvetica, sans-serif;
-}
 button {
-    font-family: Arial, Helvetica, sans-serif;
     width:100%;
     height:20%;
 }
@@ -128,8 +124,8 @@ button {
       </head>
       <body>
       ${stateString} (${autoString})<br>
-      open@${times.open.toLocaleTimeString()}<br>
-      close@${times.close.toLocaleTimeString()}
+      <div class=open>open@${times.open.toLocaleTimeString()}</div>
+      <div class=close>close@${times.close.toLocaleTimeString()}</div>
       <form>
       <button name=open class=open>open</button>
       <button name=close class=close>close</button>
@@ -163,4 +159,3 @@ button {
 console.error("starting coop controller");
 server();
 loop();     
-   
