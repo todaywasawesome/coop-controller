@@ -4,9 +4,14 @@ const http = require('http')
 var url = require('url');  
 var fs = Promise.promisifyAll(require("fs"));
 
-const pinNumber = 7;
+//const pinNumber = 7;
+const openPin = 23;
+const closePin = 24;
 const pinExport = "/sys/class/gpio/export";
-const pinDir = "/sys/class/gpio/gpio" + pinNumber + "/";
+const pinUnExport = "/sys/class/gpio/unexport";
+//const pinDir = "/sys/class/gpio/gpio" + pinNumber + "/";
+const openDir = "/sys/class/gpio/gpio" + openPin + "/";
+const closeDir = "/sys/class/gpio/gpio" + closePin + "/";
 const pinValueFile = pinDir + "value";
 const pinDirection = pinDir + "direction";
 
