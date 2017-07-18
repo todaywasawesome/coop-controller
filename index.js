@@ -1,3 +1,24 @@
+/*************************************
+* Setup configuration schedules
+* 
+* Timings Definition
+*   gpio      - The pin number that will be activated
+*   setting   - low or high, should the gpio be set to 1 or 0. 
+*   name      - Used for the logging and identifying the action
+*   duration  - The length of time the action should remain intialized. Use 0 to not set a timer. Given in ms
+*   when      - Pass a time in HH:MM format, or specify a suncalc value (eg, sunrise, sunriseEnd, etc). See https://github.com/mourner/suncalc#reference
+*         
+**************************************/
+var location = {long: "37.4852", lat: "-122.2364"};
+
+var timings = [
+  {gpio: 23, setting: "low", name: "open", duration: 20000, when: "sunrise"},
+  {gpio: 24, setting: "low", name: "close", duration: 20000, when: "dusk"},
+];
+
+
+//Do not edit below this line
+/*************************************/
 var SunCalc = require("suncalc");
 var Promise = require("bluebird");
 const http = require('http')
@@ -5,18 +26,16 @@ var url = require('url');
 var fs = Promise.promisifyAll(require("fs"));
 
 //const pinNumber = 7;
-const openPin = 23;
-const closePin = 24;
 const pinExport = "/sys/class/gpio/export";
 const pinUnExport = "/sys/class/gpio/unexport";
 //const pinDir = "/sys/class/gpio/gpio" + pinNumber + "/";
-const openDir = "/sys/class/gpio/gpio" + openPin + "/";
-const closeDir = "/sys/class/gpio/gpio" + closePin + "/";
-const pinValueFile = pinDir + "value";
-const pinDirection = pinDir + "direction";
+//const openDir = "/sys/class/gpio/gpio" + openPin + "/";
+//const closeDir = "/sys/class/gpio/gpio" + closePin + "/";
+//const pinValueFile = pinDir + "value";
+//const pinDirection = pinDir + "direction";
 
-var actions = {"open":"0", "close":"1"};
-var pinValues = {"0":"open", "1":"close"};
+//var actions = {"open":"0", "close":"1"};
+//var pinValues = {"0":"open", "1":"close"};
 var gOverride = null;
 
 function readState() {
